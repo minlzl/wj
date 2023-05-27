@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzl.wj.dao.BookDao">
+    <select id="findAll" resultType="com.lzl.wj.pojo.Book">
+        select * from book;
+    </select>
+    <select id="findByCategory" parameterType="com.lzl.wj.pojo.Category" resultType="com.lzl.wj.pojo.Book">
+        select * from book where cid=#{id};
+    </select>
+    <delete id="deleteBookById" parameterType="int">
+        delete from book where id=#{0};
+    </delete>
+<!--    <insert id="addBook" parameterType="com.lzl.wj.pojo.Book">-->
+<!--        insert into book(cover,title,author,`date`,press,abs,cid) values(#{})-->
+<!--)-->
+<!--    </insert>-->
+</mapper>

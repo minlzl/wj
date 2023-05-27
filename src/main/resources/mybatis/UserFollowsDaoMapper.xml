@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzl.wj.dao.UserFollowsDao">
+    <select id="getAllFollows" parameterType="int" resultType="int">
+        select followid from user_follows where userid = #{0};
+    </select>
+    <insert id="addFollow">
+        insert into user_follows values (#{id},#{followId});
+    </insert>
+    <delete id="subFollow">
+        delete from user_follows where userid = #{id} and followid = #{followId};
+    </delete>
+</mapper>

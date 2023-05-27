@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzl.wj.dao.ImageDao">
+    <select id="getImage" parameterType="int" resultType="String">
+        select imageLocation from image where id = #{id};
+    </select>
+    <insert id="addImage" parameterType="com.lzl.wj.pojo.Image">
+        replace into image values (#{id}, #{userName}, #{imageLocation});
+    </insert>
+</mapper>

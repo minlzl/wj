@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzl.wj.dao.CommentDao">
+    <select id="getById" resultType="com.lzl.wj.pojo.Comment" parameterType="int">
+        select * from comments where talk_id=#{0};
+    </select>
+    <insert id="subComment" parameterType="com.lzl.wj.pojo.Comment">
+        insert into comments(talk_id, content, from_id, to_id, pubtime) values (#{talk_id}, #{content}, #{from_id}, #{to_id}, #{pubtime});
+    </insert>
+</mapper>
