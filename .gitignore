@@ -44,3 +44,8 @@ gen/
 logs/
 log
 temp/
+
+###
+*.properties
+*.yml
+*.yaml
