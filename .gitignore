@@ -46,6 +46,6 @@ log
 temp/
 
 ###
-#*.properties
-#*.yml
-#*.yaml
+*.properties
+*.yml
+*.yaml
